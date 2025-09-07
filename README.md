@@ -1,18 +1,5 @@
 
-
-```markdown
 # 🍴 Restaurant AI Assistant  
-
-[![Node.js](https://img.shields.io/badge/Node.js-18+-green?logo=node.js)](https://nodejs.org/)  
-[![Express](https://img.shields.io/badge/Express.js-Framework-black?logo=express)](https://expressjs.com/)  
-[![LangChain](https://img.shields.io/badge/LangChain-AI-blue?logo=chainlink)](https://www.langchain.com/)  
-[![Google Gemini](https://img.shields.io/badge/Google-Gemini-orange?logo=google)](https://ai.google.dev/)  
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
-
-An AI-powered restaurant chatbot built using **LangChain**, **Google Generative AI (Gemini)**, and **Express.js**.  
-This chatbot can answer user queries about today's **breakfast, lunch, and dinner menus**.  
-
-```
 
 ## 🚀 Features  
 - 🤖 AI-powered chatbot using **LangChain + Gemini**  
