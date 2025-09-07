@@ -12,7 +12,7 @@
 An AI-powered restaurant chatbot built using **LangChain**, **Google Generative AI (Gemini)**, and **Express.js**.  
 This chatbot can answer user queries about today's **breakfast, lunch, and dinner menus**.  
 
----
+```
 
 ## 🚀 Features  
 - 🤖 AI-powered chatbot using **LangChain + Gemini**  
