@@ -13,7 +13,7 @@
 
 ## 📂 Project Structure  
 
-```
+
 
 .
 ├── public/
@@ -23,7 +23,7 @@
 ├── .env                 # Environment variables (ignored in Git)
 └── README.md            # Project documentation
 
-````
+
 
 ---
 
@@ -37,24 +37,24 @@
 ## ⚙️ Installation  
 
 1. **Clone the repository**  
-   ```bash
+   bash
    git clone https://github.com/your-username/restaurant-ai-assistant.git
    cd restaurant-ai-assistant
-````
+
 
 2. **Install dependencies**
 
-   ```bash
+   bash
    npm install
-   ```
+   
 
 3. **Set up environment variables**
    Create a `.env` file in the root folder and add:
 
-   ```
+   
    GOOGLE_API_KEY=your_api_key_here
    PORT=3000
-   ```
+   
 
 ---
 
@@ -62,15 +62,15 @@
 
 Start the server:
 
-```bash
+bash
 npm start
-```
+
 
 Server will run at:
 
-```
+
 http://localhost:3000
-```
+
 
 Open this URL in your browser to access the chatbot UI.
 
@@ -82,19 +82,19 @@ Open this URL in your browser to access the chatbot UI.
 
 **POST** `/api/chat`
 
-```json
+son
 {
   "input": "What's for dinner?"
 }
-```
+
 
 ✅ Example Response
 
-```json
+json
 {
   "output": "Veg Biryani, Raita, Salad, Gulab Jamun"
 }
-```
+
 
 ---
 
@@ -102,13 +102,13 @@ Open this URL in your browser to access the chatbot UI.
 
 **POST** `/ask`
 
-```json
+json
 {
   "input": "What's for lunch?"
 }
-```
 
----
+
+
 
 ## 📜 Example Interaction
 
