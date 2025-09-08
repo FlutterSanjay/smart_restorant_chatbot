@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Restaurant Chatbot</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: auto;
+      padding: 2rem;
+    }
+    input, button {
+      padding: 0.5rem;
+      margin-top: 1rem;
+      width: 100%;
+    }
+    #chat {
+      white-space: pre-wrap;
+      margin-top: 1rem;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 8px;
+      background: #f9f9f9;
+      min-height: 150px;
+    }
+    #loading {
+      display: none;
+      margin-top: 10px;
+      font-style: italic;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <h2>Restaurant AI Assistant</h2>
+  <div id="chat"></div>
+  <div id="loading">🤖 Bot is thinking...</div>
+
+  <input
+    type="text"
+    id="userInput"
+    placeholder="Ask me: What's on the dinner menu?"
+    onkeypress="if(event.key === 'Enter'){ sendMessage(); }"
+  />
+  <button onclick="sendMessage()">Send</button>
+
+  <script>
+    async function sendMessage() {
+      const inputEl = document.getElementById("userInput");
+      const input = inputEl.value.trim();
+      if (!input) return;
+
+      const chatDiv = document.getElementById("chat");
+      const loadingEl = document.getElementById("loading");
+
+      // Show loading message
+      loadingEl.style.display = "block";
+
+      try {
+        const res = await fetch("/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ input }),
+        });
+
+        const data = await res.json();
+
+        chatDiv.innerHTML += `<b>You:</b> ${input}<br><b>Bot:</b> ${data.output}<br><br>`;
+      } catch (err) {
+        chatDiv.innerHTML += `<b>You:</b> ${input}<br><b>Bot:</b> ❌ Something went wrong<br><br>`;
+      } finally {
+        // Hide loading message
+        loadingEl.style.display = "none";
+        inputEl.value = "";
+        chatDiv.scrollTop = chatDiv.scrollHeight; // auto scroll
+      }
+    }
+  </script>
+</body>
+</html>
